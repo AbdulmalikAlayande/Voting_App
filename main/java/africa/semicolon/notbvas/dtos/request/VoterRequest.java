@@ -19,4 +19,5 @@ public class VoterRequest {
 	private String state;
 	private String gender;
 	private int age;
+	private String userName;
 }
