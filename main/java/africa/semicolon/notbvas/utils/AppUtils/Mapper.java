@@ -54,7 +54,7 @@ public class Mapper {
 				       .age(voterRequest.getAge())
 				       .userInfo(mappedUserInfo(voterRequest))
 				       .address(mappedAddress(voterRequest))
-				       .gender(Gender.valueOf(voterRequest.getGender()))
+				       .gender(Gender.valueOf(voterRequest.getGender().toUpperCase()))
 				       .name(voterRequest.getName())
 				       .voterIdentificationNumber(generatedVoterIdentificationNumber())
 				       .build();

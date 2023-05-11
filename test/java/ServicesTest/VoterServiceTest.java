@@ -4,6 +4,7 @@ import africa.semicolon.notbvas.Sevices.VoterService;
 import africa.semicolon.notbvas.Sevices.VoterServiceImplementation;
 import africa.semicolon.notbvas.dtos.request.VoterRequest;
 import africa.semicolon.notbvas.dtos.response.VoterResponse;
+import africa.semicolon.notbvas.exceptions.registration_exception.FailedRegistrationException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +21,7 @@ class VoterServiceTest {
 	private VoterRequest voterRequest;
 	VoterResponse voterResponse;
 	@BeforeEach
-	void setUp() {
+	void setUp(){
 		voterService = new VoterServiceImplementation();
 		voterRequest = new VoterRequest();
 		voterRequest = VoterRequest.builder()
@@ -32,10 +33,14 @@ class VoterServiceTest {
 				               .street("edo inside")
 				               .town("Ijako")
 				               .password("ayanniyi20")
-				               .gender("MALE")
+				               .gender("Male")
 				               .userName("abdulmalik@20")
 				               .build();
-		voterResponse = voterService.registerNewVoter(voterRequest);
+		try{
+			voterResponse = voterService.registerNewVoter(voterRequest);
+		}catch(FailedRegistrationException exception){
+			System.out.println(exception.getMessage());
+		}
 	}
 	
 	@Test void registrationTest(){
@@ -46,21 +51,27 @@ class VoterServiceTest {
 	}
 	
 	@Test void findByIdTest(){
-	
+		
 	}
 	
-	@Test void getAllVotersTest(){
-		VoterResponse voterResponse1 = voterService.registerNewVoter(VoterRequest.builder()
-				                              .userName("Balablu")
-				                              .street("Blublu")
-				                              .age(86)
-				                              .name("Asiwaju Bola Hammed Tinubu")
-				                              .houseNumber("45")
-				                              .town("Oshogbo")
-				                              .password("Steal with pen")
-				                              .gender("MALE")
-				                              .state("Osun")
-				                              .build());
+	@Test void getAllVotersTest() {
+		VoterResponse voterResponse1 = null;
+		try {
+			voterResponse1 =
+					voterService.registerNewVoter(VoterRequest.builder()
+							                              .userName("Balablu")
+							                              .street("Blublu")
+							                              .age(86)
+							                              .name("Asiwaju Bola Hammed Tinubu")
+							                              .houseNumber("45")
+							                              .town("Oshogbo")
+							                              .password("Steal with pen")
+							                              .gender("MALE")
+							                              .state("Osun")
+							                              .build());
+		}catch (FailedRegistrationException exception){
+			System.out.println(exception.getMessage());
+		}
 		List<VoterResponse> voterResponseList = new ArrayList<>();
 		voterResponseList.add(voterResponse);
 		voterResponseList.add(voterResponse1);
