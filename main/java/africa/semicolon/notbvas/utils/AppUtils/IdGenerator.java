@@ -12,9 +12,11 @@ public enum IdGenerator {
 		IdGenerator letterCharacter1 = IdGenerator.values()[randomLetter.nextInt(IdGenerator.values().length)];
 		IdGenerator letterCharacter2 = IdGenerator.values()[randomLetter.nextInt(IdGenerator.values().length)];
 		IdGenerator letterCharacter3 = IdGenerator.values()[randomLetter.nextInt(IdGenerator.values().length)];
+		IdGenerator letterCharacter4 = IdGenerator.values()[randomLetter.nextInt(IdGenerator.values().length)];
 		letters+=letterCharacter1;
 		letters+=letterCharacter2;
 		letters+=letterCharacter3;
+		letters+=letterCharacter4;
 		return letters;
 	}
 }

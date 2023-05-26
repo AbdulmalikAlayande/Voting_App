@@ -66,12 +66,24 @@ public class PartyRepositoryImpl implements PartyRepository{
 	}
 	
 	@Override
-	public void deleteById(String id) {
-		listOfParties.remove(findById(id));
+	public boolean deleteById(String id) {
+		Party foundParty = findById(id);
+		if (foundParty != null) {
+			listOfParties.remove(findById(id));
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public int getCountOfAllParties() {
 		return listOfParties.size();
+	}
+	
+	@Override
+	public Party findPartyByPartyName(String partyName) {
+		for (Party party : listOfParties)
+			if (Objects.equals(party.getPartyName(), partyName)) return party;
+		return null;
 	}
 }

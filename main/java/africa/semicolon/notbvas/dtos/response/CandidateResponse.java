@@ -1,4 +1,4 @@
-package africa.semicolon.notbvas.models;
+package africa.semicolon.notbvas.dtos.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Party {
+public class CandidateResponse {
 	private String id;
-	private String partyName;
-	private UserInformation userInformation;
+	private String candidateName;
+	private String message;
 }

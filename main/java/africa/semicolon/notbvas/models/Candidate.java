@@ -1,16 +1,19 @@
 package africa.semicolon.notbvas.models;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Party {
+@Builder
+public class Candidate {
 	private String id;
 	private String partyName;
-	private UserInformation userInformation;
+	private int numberOfVotes;
+	private int percentage;
+	private String partyId;
+	private String electionId;
+	private String candidateName;
 }

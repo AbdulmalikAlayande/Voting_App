@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 @Data
@@ -17,5 +18,9 @@ import java.util.List;
 public class Election {
 	private String Id;
 	private LocalDate electionDate;
+	private LocalTime startTime;
+	private LocalDate endTime;
 	private List<Party> parties;
+	private String winnerParty;
+	private String winnerName;
 }

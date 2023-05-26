@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class VoterRequest {
+public class VoterCreationRequest {
 	private String name;
+	private String email;
 	private String password;
 	private String houseNumber;
 	private String town;

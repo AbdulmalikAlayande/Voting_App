@@ -7,7 +7,7 @@ import java.util.List;
 public interface ElectionRepository {
 	Election findById(String id);
 	List<Election> findAll();
-	Election save(Election address);
-	void deleteById(String id);
+	Election save(Election election);
+	boolean deleteById(String id);
 	int getCountOfAllElections();
 }

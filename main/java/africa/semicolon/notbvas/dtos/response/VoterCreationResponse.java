@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class VoterResponse {
+public class VoterCreationResponse {
 	private String name;
+	private String email;
 	private String voterIdentificationNumber;
 	private String message;
+	private String id;
 }

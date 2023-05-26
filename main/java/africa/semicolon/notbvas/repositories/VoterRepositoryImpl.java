@@ -7,10 +7,18 @@ import africa.semicolon.notbvas.utils.AppUtils.Mapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class VoterRepositoryImpl implements VoterRepository{
+	private static final VoterRepository instance = null;
+	private VoterRepositoryImpl(){}
+	
 	private final List<Voter> listOfVoters = new ArrayList<>();
 	private final UserInformationRepository userInformationRepository = new UserInformationRepositoryImpl();
+	
+	public static VoterRepository getInstance() {
+		return new VoterRepositoryImpl();
+	}
 	
 	@Override
 	public Voter findById(String id) {
@@ -56,7 +64,22 @@ public class VoterRepositoryImpl implements VoterRepository{
 	
 	private void saveNewVoter(Voter voter) {
 		voter.setId(generatedId());
+		voter.setVoterIdentificationNumber(generatedVin());
 		listOfVoters.add(voter);
+	}
+	
+	private String generatedVin() {
+		int position = listOfVoters.size() + 1;
+		return position+getNumbersOutOfUUid()+position;
+	}
+	
+	private String getNumbersOutOfUUid(){
+		StringBuilder builder = new StringBuilder();
+		String randomUuid = UUID.randomUUID().toString();
+		for (int i = 0; i < randomUuid.length(); i++)
+			if (Character.isDigit(randomUuid.charAt(i)))
+				builder.append(randomUuid.charAt(i));
+		return builder.toString();
 	}
 	
 	private String generatedId() {
@@ -69,13 +92,32 @@ public class VoterRepositoryImpl implements VoterRepository{
 	}
 	
 	@Override
-	public void deleteById(String id) {
+	public boolean deleteById(String id) {
 		Voter voterToBeDeleted = findById(id);
-		listOfVoters.remove(voterToBeDeleted);
+		if (voterToBeDeleted != null) {
+			listOfVoters.remove(voterToBeDeleted);
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
 	public int getCountOfAllVoters() {
 		return listOfVoters.size();
+	}
+	
+	@Override
+	public Voter getVoterByVoterIdentificationNumber(String vin) {
+		for (Voter voter : listOfVoters)
+			if (Objects.equals(voter.getVoterIdentificationNumber(), vin)) return voter;
+		return null;
+	}
+	
+	@Override
+	public Voter findVoterByVoterUsername(String userName) {
+		for (Voter voter : listOfVoters) {
+			if (Objects.equals(voter.getUserInfo().getUserName(), userName)) return voter;
+		}
+		return null;
 	}
 }

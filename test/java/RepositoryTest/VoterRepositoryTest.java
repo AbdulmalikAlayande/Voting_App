@@ -1,6 +1,5 @@
 package RepositoryTest;
 
-import africa.semicolon.notbvas.models.Gender;
 import africa.semicolon.notbvas.models.UserInformation;
 import africa.semicolon.notbvas.models.Voter;
 import africa.semicolon.notbvas.repositories.VoterRepository;
@@ -11,7 +10,8 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class VoterRepositoryTest {
 	
@@ -20,7 +20,7 @@ class VoterRepositoryTest {
 	Voter savedVoter;
 	UserInformation userInformation;
 	@BeforeEach void startAllTestWith(){
-		voterRepository = new VoterRepositoryImpl();
+		voterRepository = VoterRepositoryImpl.getInstance();
 		voter = new Voter();
 		userInformation = new UserInformation();
 		userInformation.setUserName("Ben10");
@@ -67,6 +67,9 @@ class VoterRepositoryTest {
 	}
 	
 	@Test void saveNewVoter_DeleteSavedVoterByIdTest(){
+		String name2 = "elites";
+		String name = new String("elites").intern();
+		System.out.println(name.equals(name2));
 		voterRepository.deleteById(savedVoter.getId());
 		assertEquals(0, voterRepository.getCountOfAllVoters());
 	}
