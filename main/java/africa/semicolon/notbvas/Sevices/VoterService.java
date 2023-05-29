@@ -15,8 +15,10 @@ import java.util.List;
 public interface VoterService {
 	VoterCreationResponse registerNewVoter(VoterCreationRequest voterRequest) throws FailedRegistrationException;
 	VoterCreationResponse updateVoter(VoterUpdateRequest voterUpdateRequest);
+	Voter updateVoter(Voter voterUpdate);
 	VotingResponse castVote(VotingRequest votingRequest) throws RequestNotFoundException;
 	List<VoterCreationResponse> getAllVoters();
+	List<Voter> getAllVotersInTheDatabase();
 	VoterCreationResponse findById(String id) throws RequestNotFoundException;
 	Voter getVoterById(String id) throws RequestNotFoundException;
 	List<Voter> getAllVoterObjects();

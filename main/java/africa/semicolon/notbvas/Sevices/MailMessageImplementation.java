@@ -9,10 +9,9 @@ public class MailMessageImplementation implements MailMessageService {
 	}
 	
 	@Override
-	public boolean notifyUsersThatElectionHasStarted(Voter[] voters) {
+	public void notifyUsersThatElectionHasStarted(Voter[] voters) {
 		Mailer mailer = new Mailer();
 		mailer.send(voters);
-		return true;
 	}
 	
 	@Override

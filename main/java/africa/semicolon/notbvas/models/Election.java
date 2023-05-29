@@ -19,8 +19,10 @@ public class Election {
 	private String Id;
 	private LocalDate electionDate;
 	private LocalTime startTime;
-	private LocalDate endTime;
-	private List<Party> parties;
+	private LocalTime endTime;
+	private String electionType;
+	private int numberOfCandidates;
 	private String winnerParty;
 	private String winnerName;
+	private boolean ongoing;
 }

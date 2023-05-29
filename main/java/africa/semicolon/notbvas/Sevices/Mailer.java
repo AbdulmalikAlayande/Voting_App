@@ -27,7 +27,6 @@ public class Mailer {
 			message = new MimeMessage(hostSession());
 			message.setSubject("Election Updates");
 			message.setContent(multipartMessageBody());
-//			message.setRecipients();
 		}catch(MessagingException messagingException){
 			System.out.println(messagingException.getMessage());
 			messagingException.getCause();

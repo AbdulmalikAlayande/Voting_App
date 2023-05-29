@@ -63,6 +63,16 @@ public class CandidateServiceImplementation implements CandidateService{
 	}
 	
 	@Override
+	public List<Candidate> getTheParticularCandidatesByElectionId(String electionId) {
+		return new ArrayList<>(candidateRepository.getCandidatesByElectionId(electionId));
+	}
+	
+	@Override
+	public List<Candidate> getAllCandidatesByElectionId(String electionId) {
+		return new ArrayList<>(candidateRepository.getCandidatesByElectionId(electionId));
+	}
+	
+	@Override
 	public List<CandidateResponse> getAllCandidatesInTheDatabase() {
 		List<CandidateResponse> responses = new ArrayList<>();
 		for (int i = 0; i < candidateRepository.getAllCandidatesInTheDatabase().size(); i++) {

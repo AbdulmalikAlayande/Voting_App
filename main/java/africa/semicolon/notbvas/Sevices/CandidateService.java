@@ -16,9 +16,11 @@ public interface CandidateService {
 	CandidateResponse findCandidateBy(String candidateId);
 	CandidateResponse findCandidateByName(String candidateName);
 	List<CandidateResponse> getCandidatesByElectionId(String electionId);
+	List<Candidate> getTheParticularCandidatesByElectionId(String electionId);
+	List<Candidate> getAllCandidatesByElectionId(String electionId);
 	List<CandidateResponse> getAllCandidatesInTheDatabase();
 	String deleteCandidateBy(String candidateId) throws RequestNotFoundException;
 	String deleteCandidateByCandidateName(String candidateName) throws RequestNotFoundException;
 	
-	Candidate getCandidateByPartyName(String vin);
+	Candidate getCandidateByPartyName(String partyName);
 }

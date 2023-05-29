@@ -14,7 +14,6 @@ import java.math.BigInteger;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MailMessageServiceTest {
 	List<Voter> allVoters;
@@ -44,8 +43,7 @@ class MailMessageServiceTest {
 			if (allVoters.get(i).getEmail() != null)
 				arrayOfVoters[i] = allVoters.get(i);
 		}
-		boolean allUsersHaveBeenNotified = messageService.notifyUsersThatElectionHasStarted(arrayOfVoters);
-		assertTrue(allUsersHaveBeenNotified);
+		messageService.notifyUsersThatElectionHasStarted(arrayOfVoters);
 		assertEquals(BigInteger.valueOf(4).intValue(), voterService.getCountOfAllVoters() );
 	}
 	

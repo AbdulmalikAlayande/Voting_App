@@ -15,5 +15,6 @@ public class Candidate {
 	private int percentage;
 	private String partyId;
 	private String electionId;
+	private boolean stoppedVoteCount;
 	private String candidateName;
 }

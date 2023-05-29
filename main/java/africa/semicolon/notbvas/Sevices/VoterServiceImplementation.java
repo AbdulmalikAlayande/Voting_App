@@ -43,11 +43,17 @@ public class VoterServiceImplementation implements VoterService{
 	}
 	
 	@Override
+	public Voter updateVoter(Voter voterUpdate) {
+		return voterRepository.save(voterUpdate);
+	}
+	
+	@Override
 	public VotingResponse castVote(VotingRequest votingRequest){
 		VotingResponse votingResponse = new VotingResponse();
 		Candidate candidate = candidateService.getCandidateByPartyName(votingRequest.getCandidateParty());
+		System.out.println(votingRequest.getCandidateParty());
 		Voter foundVoter = voterRepository.getVoterByVoterIdentificationNumber(votingRequest.getVin());
-		if (candidate != null && foundVoter != null){
+		if (candidate != null && foundVoter != null && foundVoter.isCanNowVote() && !candidate.isStoppedVoteCount()){
 			foundVoter.setTimeOfVote(votingRequest.getTimeVoteWasCasted());
 			voterRepository.save(foundVoter);
 			candidate.setNumberOfVotes(candidate.getNumberOfVotes() + 1);
@@ -85,6 +91,11 @@ public class VoterServiceImplementation implements VoterService{
 			mappedResponses.add(VoterMapper.map(voter));
 		}
 		return mappedResponses;
+	}
+	
+	@Override
+	public List<Voter> getAllVotersInTheDatabase() {
+		return new ArrayList<>(voterRepository.findAll());
 	}
 	
 	@Override
