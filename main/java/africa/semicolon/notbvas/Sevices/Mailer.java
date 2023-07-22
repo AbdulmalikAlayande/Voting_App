@@ -1,6 +1,5 @@
 package africa.semicolon.notbvas.Sevices;
 import africa.semicolon.notbvas.models.Voter;
-import gettingmyhandsdirtywithsendingemailsusingjava.PasswordAuthenticator;
 
 
 import javax.mail.*;
@@ -18,7 +17,11 @@ public class Mailer {
 	}
 	
 	private Session hostSession(){
-		return Session.getInstance(getSessionProperties(), new PasswordAuthenticator());
+		return Session.getInstance(getSessionProperties(), new Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication("alaabdulmalik03@gmail.com","akncjypshgzmqkms");
+			}
+		});
 	}
 	
 	private Message composeMessage(){
@@ -96,5 +99,19 @@ public class Mailer {
 			exception.printStackTrace();
 		}
 		System.out.println("Message Successfully Sent");
+	}
+	
+	public static void main(String[] args) {
+		Mailer mailer = new Mailer();
+		Voter[] voters = new Voter[2];
+		voters[0] = Voter.builder()
+				            .email("dominicrotimi@gmail.com")
+				            .name("domdom")
+				            .build();
+		voters[1] = Voter.builder()
+				            .email("coutinhodacruz10@gmail.com")
+				            .name("dominic")
+				            .build();
+		mailer.send(voters);
 	}
 }
