@@ -2,10 +2,10 @@ package ServicesTest;
 
 import africa.semicolon.notbvas.Sevices.PartyService;
 import africa.semicolon.notbvas.Sevices.PartyServiceImplementation;
-import africa.semicolon.notbvas.dtos.request.CandidateRequest;
-import africa.semicolon.notbvas.dtos.request.PartyRequest;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
-import africa.semicolon.notbvas.dtos.response.PartyResponse;
+import africa.semicolon.notbvas.data.dtos.request.CandidateRequest;
+import africa.semicolon.notbvas.data.dtos.request.PartyRequest;
+import africa.semicolon.notbvas.data.dtos.response.CandidateResponse;
+import africa.semicolon.notbvas.data.dtos.response.PartyResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

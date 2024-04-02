@@ -1,11 +1,11 @@
 package africa.semicolon.notbvas.Sevices;
 
-import africa.semicolon.notbvas.dtos.request.ElectionRequest;
-import africa.semicolon.notbvas.dtos.request.updateRequest.ElectionUpdateRequest;
-import africa.semicolon.notbvas.dtos.response.ElectionResponse;
-import africa.semicolon.notbvas.dtos.response.ElectionResult;
-import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
-import africa.semicolon.notbvas.models.Election;
+import africa.semicolon.notbvas.data.dtos.request.ElectionRequest;
+import africa.semicolon.notbvas.data.dtos.request.updateRequest.ElectionUpdateRequest;
+import africa.semicolon.notbvas.data.dtos.response.ElectionResponse;
+import africa.semicolon.notbvas.data.dtos.response.ElectionResult;
+import africa.semicolon.notbvas.exceptions.RequestNotFoundException;
+import africa.semicolon.notbvas.data.models.Election;
 
 import java.util.List;
                                                     

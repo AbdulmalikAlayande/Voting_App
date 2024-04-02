@@ -1,13 +1,13 @@
 package africa.semicolon.notbvas.Sevices;
 
-import africa.semicolon.notbvas.dtos.request.CandidateRequest;
-import africa.semicolon.notbvas.dtos.request.updateRequest.CandidateUpdateRequest;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
-import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
-import africa.semicolon.notbvas.models.Candidate;
-import africa.semicolon.notbvas.repositories.CandidateRepository;
-import africa.semicolon.notbvas.repositories.CandidateRepositoryImplementation;
-import africa.semicolon.notbvas.utils.AppUtils.CandidateMapper;
+import africa.semicolon.notbvas.data.dtos.request.CandidateRequest;
+import africa.semicolon.notbvas.data.dtos.request.updateRequest.CandidateUpdateRequest;
+import africa.semicolon.notbvas.data.dtos.response.CandidateResponse;
+import africa.semicolon.notbvas.exceptions.RequestNotFoundException;
+import africa.semicolon.notbvas.data.models.Candidate;
+import africa.semicolon.notbvas.data.repositories.CandidateRepository;
+import africa.semicolon.notbvas.data.repositories.CandidateRepositoryImplementation;
+import africa.semicolon.notbvas.utils.CandidateMapper;
 
 import java.util.ArrayList;
 import java.util.List;

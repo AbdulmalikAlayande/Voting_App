@@ -1,8 +1,8 @@
 package RepositoryTest;
 
-import africa.semicolon.notbvas.models.Candidate;
-import africa.semicolon.notbvas.repositories.CandidateRepository;
-import africa.semicolon.notbvas.repositories.CandidateRepositoryImplementation;
+import africa.semicolon.notbvas.data.models.Candidate;
+import africa.semicolon.notbvas.data.repositories.CandidateRepository;
+import africa.semicolon.notbvas.data.repositories.CandidateRepositoryImplementation;
 import org.junit.jupiter.api.*;
 
 import java.math.BigInteger;

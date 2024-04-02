@@ -1,6 +1,6 @@
 package gettingmyhandsdirtywithsendingemailsusingjava;
 
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.models.Voter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

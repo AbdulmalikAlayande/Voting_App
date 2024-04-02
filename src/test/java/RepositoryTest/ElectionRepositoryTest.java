@@ -1,8 +1,8 @@
 package RepositoryTest;
 
-import africa.semicolon.notbvas.models.Election;
-import africa.semicolon.notbvas.repositories.ElectionRepository;
-import africa.semicolon.notbvas.repositories.ElectionRepositoryImplementation;
+import africa.semicolon.notbvas.data.models.Election;
+import africa.semicolon.notbvas.data.repositories.ElectionRepository;
+import africa.semicolon.notbvas.data.repositories.ElectionRepositoryImplementation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

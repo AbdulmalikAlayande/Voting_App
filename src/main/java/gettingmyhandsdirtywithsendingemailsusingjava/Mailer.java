@@ -1,6 +1,6 @@
 package gettingmyhandsdirtywithsendingemailsusingjava;
 
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.models.Voter;
 
 import javax.mail.*;
 import javax.mail.internet.*;

@@ -1,9 +1,9 @@
 package RepositoryTest;
 
-import africa.semicolon.notbvas.models.Admin;
-import africa.semicolon.notbvas.models.UserInformation;
-import africa.semicolon.notbvas.repositories.AdminRepository;
-import africa.semicolon.notbvas.repositories.AdminRepositoryImpl;
+import africa.semicolon.notbvas.data.models.Admin;
+import africa.semicolon.notbvas.data.models.UserInformation;
+import africa.semicolon.notbvas.data.repositories.AdminRepository;
+import africa.semicolon.notbvas.data.repositories.AdminRepositoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

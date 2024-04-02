@@ -4,9 +4,9 @@ import africa.semicolon.notbvas.Sevices.MailMessageImplementation;
 import africa.semicolon.notbvas.Sevices.MailMessageService;
 import africa.semicolon.notbvas.Sevices.VoterService;
 import africa.semicolon.notbvas.Sevices.VoterServiceImplementation;
-import africa.semicolon.notbvas.dtos.request.VoterCreationRequest;
-import africa.semicolon.notbvas.exceptions.registration_exception.FailedRegistrationException;
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.dtos.request.VoterCreationRequest;
+import africa.semicolon.notbvas.exceptions.FailedRegistrationException;
+import africa.semicolon.notbvas.data.models.Voter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

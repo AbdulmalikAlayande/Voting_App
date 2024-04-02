@@ -1,6 +1,6 @@
 package africa.semicolon.notbvas.Sevices;
 
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.models.Voter;
 
 public interface MailMessageService {
 	

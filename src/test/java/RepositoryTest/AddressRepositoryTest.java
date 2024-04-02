@@ -1,8 +1,8 @@
 package RepositoryTest;
 
-import africa.semicolon.notbvas.models.Address;
-import africa.semicolon.notbvas.repositories.AddressRepository;
-import africa.semicolon.notbvas.repositories.AddressRepositoryImpl;
+import africa.semicolon.notbvas.data.models.Address;
+import africa.semicolon.notbvas.data.repositories.AddressRepository;
+import africa.semicolon.notbvas.data.repositories.AddressRepositoryImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

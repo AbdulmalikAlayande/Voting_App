@@ -1,13 +1,13 @@
 package africa.semicolon.notbvas.Sevices;
 
-import africa.semicolon.notbvas.dtos.request.VoterCreationRequest;
-import africa.semicolon.notbvas.dtos.request.VotingRequest;
-import africa.semicolon.notbvas.dtos.request.updateRequest.VoterUpdateRequest;
-import africa.semicolon.notbvas.dtos.response.VoterCreationResponse;
-import africa.semicolon.notbvas.dtos.response.VotingResponse;
-import africa.semicolon.notbvas.exceptions.registration_exception.FailedRegistrationException;
-import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.dtos.request.VoterCreationRequest;
+import africa.semicolon.notbvas.data.dtos.request.VotingRequest;
+import africa.semicolon.notbvas.data.dtos.request.updateRequest.VoterUpdateRequest;
+import africa.semicolon.notbvas.data.dtos.response.VoterCreationResponse;
+import africa.semicolon.notbvas.data.dtos.response.VotingResponse;
+import africa.semicolon.notbvas.exceptions.FailedRegistrationException;
+import africa.semicolon.notbvas.exceptions.RequestNotFoundException;
+import africa.semicolon.notbvas.data.models.Voter;
 
 
 import java.util.List;

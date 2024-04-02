@@ -2,9 +2,9 @@ package ServicesTest;
 
 import africa.semicolon.notbvas.Sevices.CandidateService;
 import africa.semicolon.notbvas.Sevices.CandidateServiceImplementation;
-import africa.semicolon.notbvas.dtos.request.CandidateRequest;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
-import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
+import africa.semicolon.notbvas.data.dtos.request.CandidateRequest;
+import africa.semicolon.notbvas.data.dtos.response.CandidateResponse;
+import africa.semicolon.notbvas.exceptions.RequestNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

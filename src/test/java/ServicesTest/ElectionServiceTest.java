@@ -1,15 +1,16 @@
 package ServicesTest;
 
 import africa.semicolon.notbvas.Sevices.*;
+import africa.semicolon.notbvas.data.dtos.request.*;
 import africa.semicolon.notbvas.dtos.request.*;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
-import africa.semicolon.notbvas.dtos.response.ElectionResponse;
-import africa.semicolon.notbvas.dtos.response.PartyResponse;
-import africa.semicolon.notbvas.dtos.response.VoterCreationResponse;
-import africa.semicolon.notbvas.exceptions.registration_exception.FailedRegistrationException;
-import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
-import africa.semicolon.notbvas.models.Candidate;
-import africa.semicolon.notbvas.models.Voter;
+import africa.semicolon.notbvas.data.dtos.response.CandidateResponse;
+import africa.semicolon.notbvas.data.dtos.response.ElectionResponse;
+import africa.semicolon.notbvas.data.dtos.response.PartyResponse;
+import africa.semicolon.notbvas.data.dtos.response.VoterCreationResponse;
+import africa.semicolon.notbvas.exceptions.FailedRegistrationException;
+import africa.semicolon.notbvas.exceptions.RequestNotFoundException;
+import africa.semicolon.notbvas.data.models.Candidate;
+import africa.semicolon.notbvas.data.models.Voter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
