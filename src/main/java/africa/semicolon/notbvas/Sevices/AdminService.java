@@ -1,10 +1,8 @@
 package africa.semicolon.notbvas.Sevices;
 
 import africa.semicolon.notbvas.dtos.request.AdminRequest;
-import africa.semicolon.notbvas.dtos.request.CandidateRequest;
 import africa.semicolon.notbvas.dtos.request.ElectionRequest;
 import africa.semicolon.notbvas.dtos.response.AdminResponse;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
 import africa.semicolon.notbvas.dtos.response.ElectionResponse;
 import africa.semicolon.notbvas.models.Candidate;
 import africa.semicolon.notbvas.models.Election;
@@ -22,8 +20,7 @@ public interface AdminService{
 	String deleteElection(String electionId);
 	List<ElectionResponse>getAllElections();
 	Election getElectionsById(String electionId);
-	CandidateResponse createCandidate(CandidateRequest candidateRequest);
-	CandidateResponse updateCandidate(CandidateRequest candidateRequest);
+	
 	String deleteCandidate(String candidateId);
 	Candidate getCandidatesByElectionId(String candidateId);
 //	getElectionResults();

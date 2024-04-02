@@ -10,4 +10,8 @@ public interface CandidateRepository {
 	List<Candidate> getCandidatesByElectionId(String electionId);
 	List<Candidate> getAllCandidatesInTheDatabase();
 	boolean deleteCandidateBy(String candidateId);
+	
+	boolean deleteCandidateByCandidateName(String candidateName);
+	
+	Candidate getCandidateByPartyName(String partyName);
 }

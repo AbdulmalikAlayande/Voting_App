@@ -20,7 +20,7 @@ class VoterRepositoryTest {
 	Voter savedVoter;
 	UserInformation userInformation;
 	@BeforeEach void startAllTestWith(){
-		voterRepository = new VoterRepositoryImpl();
+		voterRepository = VoterRepositoryImpl.getInstance();
 		voter = new Voter();
 		userInformation = new UserInformation();
 		userInformation.setUserName("Ben10");
@@ -69,7 +69,7 @@ class VoterRepositoryTest {
 	@Test void saveNewVoter_DeleteSavedVoterByIdTest(){
 		String name2 = "elites";
 		String name = new String("elites").intern();
-		System.out.println(name == name2);
+		System.out.println(name.equals(name2));
 		voterRepository.deleteById(savedVoter.getId());
 		assertEquals(0, voterRepository.getCountOfAllVoters());
 	}

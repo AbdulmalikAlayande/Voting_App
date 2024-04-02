@@ -1,10 +1,8 @@
 package africa.semicolon.notbvas.Sevices;
 
 import africa.semicolon.notbvas.dtos.request.AdminRequest;
-import africa.semicolon.notbvas.dtos.request.CandidateRequest;
 import africa.semicolon.notbvas.dtos.request.ElectionRequest;
 import africa.semicolon.notbvas.dtos.response.AdminResponse;
-import africa.semicolon.notbvas.dtos.response.CandidateResponse;
 import africa.semicolon.notbvas.dtos.response.ElectionResponse;
 import africa.semicolon.notbvas.models.Candidate;
 import africa.semicolon.notbvas.models.Election;
@@ -12,6 +10,15 @@ import africa.semicolon.notbvas.models.Election;
 import java.util.List;
 
 public class AdminServiceImplementation implements AdminService{
+	
+	private static AdminService instance = null;
+	private AdminServiceImplementation(){}
+	
+	public static AdminService getInstance() {
+		if (instance == null)
+			return new AdminServiceImplementation();
+		return instance;
+	}
 	
 	@Override
 	public AdminResponse registerAdmin(AdminRequest adminRequest) {
@@ -60,16 +67,6 @@ public class AdminServiceImplementation implements AdminService{
 	
 	@Override
 	public Election getElectionsById(String electionId) {
-		return null;
-	}
-	
-	@Override
-	public CandidateResponse createCandidate(CandidateRequest candidateRequest) {
-		return null;
-	}
-	
-	@Override
-	public CandidateResponse updateCandidate(CandidateRequest candidateRequest) {
 		return null;
 	}
 	

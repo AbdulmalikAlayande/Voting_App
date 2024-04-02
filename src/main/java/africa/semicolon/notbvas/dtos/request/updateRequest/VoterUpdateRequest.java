@@ -1,16 +1,15 @@
 package africa.semicolon.notbvas.dtos.request.updateRequest;
 import com.mongodb.lang.Nullable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class VoterUpdateRequest {
+	@NonNull private String userName;
 	@Nullable private String name;
+	@Nullable private String email;
 	@Nullable private String password;
 	@Nullable private String houseNumber;
 	@Nullable private String town;
@@ -19,5 +18,5 @@ public class VoterUpdateRequest {
 	@Nullable private String state;
 	@Nullable private String gender;
 	@Nullable private int age;
-	@Nullable private String userName;
+	@Nullable private String newUserName;
 }

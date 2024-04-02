@@ -12,5 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PartyUpdateRequest {
 	@Nullable  private String password;
+	@Nullable private String partyName;
+	private String partyFormerName;
 	@Nullable  private String partyUserName;
 }

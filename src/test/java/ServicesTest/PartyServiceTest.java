@@ -2,7 +2,9 @@ package ServicesTest;
 
 import africa.semicolon.notbvas.Sevices.PartyService;
 import africa.semicolon.notbvas.Sevices.PartyServiceImplementation;
+import africa.semicolon.notbvas.dtos.request.CandidateRequest;
 import africa.semicolon.notbvas.dtos.request.PartyRequest;
+import africa.semicolon.notbvas.dtos.response.CandidateResponse;
 import africa.semicolon.notbvas.dtos.response.PartyResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,16 +16,24 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PartyServiceTest {
-	
+	CandidateRequest candidateRequest;
 	PartyService partyService;
 	PartyResponse returnedResponse;
 	PartyRequest partyRequest;
+	CandidateResponse returnedCandidateResponse;
 	@BeforeEach void setUp() {
-		partyService = new PartyServiceImplementation();
+		partyService = PartyServiceImplementation.getInstance();
 		partyRequest = PartyRequest.builder()
 				               .partyUserName("APC")
 				               .password("broomIsOurStealingWeapon")
 				               .build();
+		candidateRequest = CandidateRequest.builder()
+				                   .electionId("God abeg o")
+				                   .candidateName("Tinubu")
+				                   .partyId("The thieves")
+				                   .candidatePartyName(partyRequest.getPartyUserName())
+				                   .build();
+		returnedCandidateResponse = partyService.createCandidate(candidateRequest);
 		returnedResponse = partyService.registerNewPartyTest(partyRequest);
 	}
 	
@@ -60,5 +70,15 @@ class PartyServiceTest {
 			assertNotNull(partyService.findAll().get(i));
 		assertEquals(expectedParties, partyService.findAll());
 		assertEquals(BigInteger.TWO.intValue(), partyService.findAll().size());
+	}
+	
+	@Test void createNewCandidateTest(){
+		assertNotNull(returnedCandidateResponse);
+		assertNotNull(returnedCandidateResponse.getCandidateName());
+		assertNotNull(returnedCandidateResponse.getMessage());
+	}
+	
+	@Test void updateNewCandidateTest(){
+	
 	}
 }

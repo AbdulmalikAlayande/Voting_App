@@ -8,4 +8,8 @@ public interface VoterRepository {
 	Voter findById(String id);
 	boolean deleteById(String id);
 	int getCountOfAllVoters();
+	
+	Voter getVoterByVoterIdentificationNumber(String vin);
+	
+	Voter findVoterByVoterUsername(String userName);
 }

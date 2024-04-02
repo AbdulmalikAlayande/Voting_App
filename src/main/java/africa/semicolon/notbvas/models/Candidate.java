@@ -11,7 +11,10 @@ import lombok.NoArgsConstructor;
 public class Candidate {
 	private String id;
 	private String partyName;
+	private int numberOfVotes;
+	private int percentage;
 	private String partyId;
 	private String electionId;
+	private boolean stoppedVoteCount;
 	private String candidateName;
 }

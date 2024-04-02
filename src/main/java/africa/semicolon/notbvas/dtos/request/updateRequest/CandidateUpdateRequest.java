@@ -14,4 +14,5 @@ public class CandidateUpdateRequest {
 	@Nullable private String partyName;
 	@Nullable private String electionId;
 	@Nullable private String candidateName;
+	private String candidateFormerName;
 }

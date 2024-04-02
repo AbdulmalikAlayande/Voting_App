@@ -11,5 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CandidateRequest {
 	private String candidateName;
-	private String candidateParty;
+	private String candidatePartyName;
+	private String electionId;
+	private String partyId;
 }

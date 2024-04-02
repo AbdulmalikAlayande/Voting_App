@@ -1,7 +1,10 @@
 package africa.semicolon.notbvas.Sevices;
 
-import africa.semicolon.notbvas.dtos.request.VoterRequest;
-import africa.semicolon.notbvas.dtos.response.VoterResponse;
+import africa.semicolon.notbvas.dtos.request.VoterCreationRequest;
+import africa.semicolon.notbvas.dtos.request.VotingRequest;
+import africa.semicolon.notbvas.dtos.request.updateRequest.VoterUpdateRequest;
+import africa.semicolon.notbvas.dtos.response.VoterCreationResponse;
+import africa.semicolon.notbvas.dtos.response.VotingResponse;
 import africa.semicolon.notbvas.exceptions.registration_exception.FailedRegistrationException;
 import africa.semicolon.notbvas.exceptions.registration_exception.RequestNotFoundException;
 import africa.semicolon.notbvas.models.Voter;
@@ -10,9 +13,16 @@ import africa.semicolon.notbvas.models.Voter;
 import java.util.List;
 
 public interface VoterService {
-	VoterResponse registerNewVoter(VoterRequest voterRequest) throws FailedRegistrationException;
-	List<VoterResponse> getAllVoters();
-	VoterResponse findById(String id) throws RequestNotFoundException;
+	VoterCreationResponse registerNewVoter(VoterCreationRequest voterRequest) throws FailedRegistrationException;
+	VoterCreationResponse updateVoter(VoterUpdateRequest voterUpdateRequest);
+	Voter updateVoter(Voter voterUpdate);
+	VotingResponse castVote(VotingRequest votingRequest) throws RequestNotFoundException;
+	List<VoterCreationResponse> getAllVoters();
+	List<Voter> getAllVotersInTheDatabase();
+	VoterCreationResponse findById(String id) throws RequestNotFoundException;
+	Voter getVoterById(String id) throws RequestNotFoundException;
+	List<Voter> getAllVoterObjects();
+	
 	String deleteById(String id) throws RequestNotFoundException;
 	int getCountOfAllVoters();
 	

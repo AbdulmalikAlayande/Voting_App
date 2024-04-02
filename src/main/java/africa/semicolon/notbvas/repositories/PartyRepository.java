@@ -8,4 +8,6 @@ public interface PartyRepository {
 	Party save(Party party);
 	boolean deleteById(String id);
 	int getCountOfAllParties();
+	
+	Party findPartyByPartyName(String partyName);
 }

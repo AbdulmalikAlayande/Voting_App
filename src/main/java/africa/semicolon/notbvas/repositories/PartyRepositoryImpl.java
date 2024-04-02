@@ -79,4 +79,11 @@ public class PartyRepositoryImpl implements PartyRepository{
 	public int getCountOfAllParties() {
 		return listOfParties.size();
 	}
+	
+	@Override
+	public Party findPartyByPartyName(String partyName) {
+		for (Party party : listOfParties)
+			if (Objects.equals(party.getPartyName(), partyName)) return party;
+		return null;
+	}
 }

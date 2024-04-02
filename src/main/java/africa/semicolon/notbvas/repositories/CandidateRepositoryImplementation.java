@@ -69,6 +69,24 @@ public class CandidateRepositoryImplementation implements CandidateRepository{
 		return false;
 	}
 	
+	@Override
+	public boolean deleteCandidateByCandidateName(String candidateName) {
+		Candidate foundCandidate = findCandidateByName(candidateName);
+		if (foundCandidate != null) {
+			listOfCandidates.remove(foundCandidate);
+			return true;
+		}
+		return false;
+		
+	}
+	
+	@Override
+	public Candidate getCandidateByPartyName(String partyName) {
+		for (Candidate candidate : listOfCandidates)
+			if (Objects.equals(candidate.getPartyName(), partyName)) return candidate;
+		return null;
+	}
+	
 	private String generatedId() {
 		String character = IdGenerator.getCharacter()+""+IdGenerator.getCharacter()+""+IdGenerator.getCharacter();
 		return idFilledWithRandomNumbersAndThe(character).toString();
