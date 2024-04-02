@@ -1,4 +1,4 @@
-package ServicesTest;
+package africa.semicolon.notbvas.ServicesTest;
 
 import africa.semicolon.notbvas.Sevices.MailMessageImplementation;
 import africa.semicolon.notbvas.Sevices.MailMessageService;
